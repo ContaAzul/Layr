@@ -5,23 +5,8 @@
 
 Its an Open Source focused on easy web routing, fast code maintence and free-logic markup.
 
-## Install on your local maven repository
-
-Type on your Terminal/Console:
-```bash
-git clone git://github.com/miere/Layr.git
-cd Layr/layr-parent
-mvn clean install
-```
-
-## Documentation
-Documentation still on earlier development. For now, you can follow some examples on:
-- [Configuring Layr on JEE environment](https://github.com/miere/Layr/wiki/Configuring-Layr-on-JEE-environment)
-- **Configuring Layr on Play-Framework environment** - Comming Soon
-- [Introduction to Layr Routing](https://github.com/miere/Layr/wiki/Introduction-to-Layr-Routing)
-- [This Routing Implementation](https://github.com/miere/Layr/blob/3.0/layr-core/tests/layr/routing/sample/HelloResource.java)
-- [Another Routing Implementation](https://github.com/miere/Layr/blob/3.0/layr-core/tests/layr/routing/sample/HomeResource.java)
-- [Full JEE Sample](https://github.com/miere/Layr/tree/3.0/samples/layr-jee-sample)
+## Moved
+Layr is now part of [SkullLabs](https://github.com/SkullLabs) stack of technologies and has been moved to [their repositories](https://github.com/SkullLabs/Layr). Layr will always be available to the community as Free and Open Source Software and will always be released under Apache License 2 (or equivalent permissive) license. SkullLabs and their development team will provide a SLA support for Layr further versions and its stack softwares.
 
 ## Licence
 Layr framework is distributed under [Apache 2 licence](http://www.apache.org/licenses/LICENSE-2.0.html).

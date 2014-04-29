@@ -1,10 +1,11 @@
 language: java
-script: mvn -f layr-parent/pom.xml clean install
+script: mvn clean install
 # whitelist
 branches:
   only:
     - master
+    - unstable
 
 notifications:
   email:
-    - miere00@gmail.com
+    - miere.teixeira+layr-travis-ci@gmail.com

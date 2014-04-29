@@ -1,9 +1,0 @@
-html, body { height: 100%; }
-.container.body-content { padding-top: 20px; }
-.container.body-content h3 {
-	color: gray;
-	position: relative;
-	top: -20px;
-}
-
-.FormItem label { min-width: 120px; }

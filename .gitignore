@@ -7,3 +7,5 @@ faces-config.xml
 .settings
 .DS_Store
 .cache
+.factorypath
+*/.factorypath

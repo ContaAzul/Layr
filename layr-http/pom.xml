@@ -8,8 +8,19 @@
 		<artifactId>layr-parent</artifactId>
 	</parent>
 
-	<artifactId>layr-api</artifactId>
-	<name>Layr: API</name>
+	<artifactId>layr-http</artifactId>
+	<name>Layr: Abstraction for http handling</name>
 	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>layr-dispatcher</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>layr-api</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>

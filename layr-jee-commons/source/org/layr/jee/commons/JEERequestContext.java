@@ -172,9 +172,6 @@ public class JEERequestContext extends AbstractRequestContext {
 
 	public static JEERequestContext configureRequestContext( JEERequestContext context ) {
 		JEEConfiguration configuration = context.getConfiguration();
-
-		context.setCharacterEncoding("UTF-8");
-//        context.setContentType("text/html");
 		context.setCache( createCache( configuration ) );
         context.setRegisteredTagLibs( configuration.getRegisteredTagLibs() );
 

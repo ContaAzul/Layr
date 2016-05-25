@@ -39,7 +39,7 @@ public class PluginFilter implements Filter {
 		try {
 			JEERequestContext layrContext = JEERequestContext.createRequestContext(
 					request, response, filterConfig.getServletContext());
-			if (!haveFoundTheWebPageXHTMLAndRenderedSuccessfully( layrContext ) )
+			if (!haveFoundTheWebPageXHTMLAndRenderedSuccessfully( layrContext ))
 				chain.doFilter(request, response);
 		} catch (Exception e) {
 			throw new ServletException(e.getMessage(), e);
@@ -48,20 +48,22 @@ public class PluginFilter implements Filter {
 
 	/**
 	 * @param instance
-	 * @throws IOException 
-	 * @throws ServletException 
-	 * @throws CloneNotSupportedException 
-	 * @throws SAXException 
-	 * @throws ParserConfigurationException 
-	 * @throws TemplateParsingException 
+	 * @throws IOException
+	 * @throws ServletException
+	 * @throws CloneNotSupportedException
+	 * @throws SAXException
+	 * @throws ParserConfigurationException
+	 * @throws TemplateParsingException
 	 */
-	public boolean haveFoundTheWebPageXHTMLAndRenderedSuccessfully( JEERequestContext requestContext ) 
+	public boolean haveFoundTheWebPageXHTMLAndRenderedSuccessfully( JEERequestContext requestContext )
 			throws IOException, ParserConfigurationException, SAXException, CloneNotSupportedException, ServletException, TemplateParsingException {
 		String relativePath = measureRelativePath(requestContext);
 		IComponent webpage = compile( relativePath, requestContext );
 		if ( webpage == null )
 			return false;
 
+		requestContext.setCharacterEncoding("UTF-8");
+		requestContext.setContentType("text/html");
 		populateRequestContextWithSentParamsFromHttpClient(requestContext);
 		webpage.render();
 		return true;

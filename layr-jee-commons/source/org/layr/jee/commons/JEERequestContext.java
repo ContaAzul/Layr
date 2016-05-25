@@ -82,7 +82,7 @@ public class JEERequestContext extends AbstractRequestContext {
 	@Override
 	public String getRelativePath() {
 		String relativePath = super.getRelativePath();
-		if ( relativePath == null ) {
+		if ( relativePath == null && request.getRequestURI() != null ) {
 			String uri = request
 							.getRequestURI()
 							.replaceFirst(getApplicationRootPath(), "");
@@ -180,7 +180,10 @@ public class JEERequestContext extends AbstractRequestContext {
 			context.put("contextPath", httpRequest.getContextPath());
 			context.put("path", httpRequest.getRequestURI());
 		}
-
+		if (context.getDefaultResourcePath().equals( context.getRelativePath() )) {
+			context.setCharacterEncoding("UTF-8");
+			context.setContentType("text/html");
+		}
 		return context;
 	}
 

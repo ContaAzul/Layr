@@ -9,7 +9,6 @@ import javax.servlet.ServletException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.layr.commons.FileUtils;
 import org.layr.engine.IRequestContext;
@@ -88,7 +87,6 @@ public class TemplateParserTest {
 	}
 
 	@Test
-	@Ignore
 	public void grantThatHomeScreenInheritDefaultThemeAsExpected() throws IOException, TemplateParsingException {
 		requestContext.put("comments", "Its a comment.");
 		TemplateParser parser = new TemplateParser(requestContext);

@@ -37,7 +37,7 @@ public class JEERequestContext extends AbstractRequestContext {
 	private JEEConfiguration configuration;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
-	
+
 	public JEERequestContext(
 			HttpServletRequest request, HttpServletResponse response,
 			JEEConfiguration configuration ) {
@@ -59,7 +59,7 @@ public class JEERequestContext extends AbstractRequestContext {
 	public HttpServletRequest getRequest() {
 		return request;
 	}
-	
+
 	public void setRequest(HttpServletRequest request) {
 		this.request = request;
 	}
@@ -67,7 +67,7 @@ public class JEERequestContext extends AbstractRequestContext {
 	public HttpServletResponse getResponse() {
 		return response;
 	}
-	
+
 	public void setResponse(HttpServletResponse response) {
 		this.response = response;
 	}
@@ -101,7 +101,7 @@ public class JEERequestContext extends AbstractRequestContext {
 	/**
 	 * Retrieves the current layrContext path. For more info see
 	 * {@link HttpServletRequest#getContextPath()}
-	 * 
+	 *
 	 * @return contextPath
 	 */
 	public String getApplicationRootPath() {
@@ -172,9 +172,6 @@ public class JEERequestContext extends AbstractRequestContext {
 
 	public static JEERequestContext configureRequestContext( JEERequestContext context ) {
 		JEEConfiguration configuration = context.getConfiguration();
-
-		context.setCharacterEncoding("UTF-8");
-        context.setContentType("text/html");
 		context.setCache( createCache( configuration ) );
         context.setRegisteredTagLibs( configuration.getRegisteredTagLibs() );
 
@@ -192,7 +189,7 @@ public class JEERequestContext extends AbstractRequestContext {
 			return null;
 		return configuration.getCache();
 	}
-	
+
 	@Override
 	public Map<String, IComponentFactory> getRegisteredTagLibs() {
 		return configuration.getRegisteredTagLibs();

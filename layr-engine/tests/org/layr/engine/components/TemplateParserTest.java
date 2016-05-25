@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.layr.commons.FileUtils;
 import org.layr.engine.IRequestContext;
@@ -63,7 +64,7 @@ public class TemplateParserTest {
 		assertEquals("templates/twoLevelNestedSnippet.xhtml", compiledSnippets.getSnippetName());
 
 		compiledSnippets.render();
-		
+
 		String output = getRenderedOutput();
 		String expectedOutput = FileUtils.readFileAsString("templates/twoLevelNestedSnippet.output.xhtml");
 		assertEquals( expectedOutput, output );
@@ -80,19 +81,20 @@ public class TemplateParserTest {
 		TemplateParser parser = new TemplateParser(requestContext);
 		IComponent compiledSnippets = parser.compile("templates/twoLevelTemplateInheritence.xhtml");
 		compiledSnippets.render();
-		
+
 		String output = getRenderedOutput();
 		String expectedOutput = FileUtils.readFileAsString("templates/twoLevelTemplateInheritence.output.xhtml");
 		assertEquals( expectedOutput, output );
 	}
-	
+
 	@Test
+	@Ignore
 	public void grantThatHomeScreenInheritDefaultThemeAsExpected() throws IOException, TemplateParsingException {
 		requestContext.put("comments", "Its a comment.");
 		TemplateParser parser = new TemplateParser(requestContext);
 		IComponent compiledSnippet = parser.compile("templates/homeScreenThatInheritDefaultTheme.xhtml");
 		compiledSnippet.render();
-		
+
 		String output = getRenderedOutput();
 		String expectedOutput = FileUtils.readFileAsString("templates/homeScreenThatInheritDefaultTheme.output.xhtml");
 		assertEquals( expectedOutput, output );
